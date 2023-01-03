@@ -12,11 +12,6 @@ services:
           name: piazza-db
           property: connectionString
       - key: RAILS_MASTER_KEY
-        fromService:
-          name: piazza-redis
-          type: redis
-          property: connectionString
-      - key: RAILS_MASTER_KEY
         sync: false
 
 databases:
