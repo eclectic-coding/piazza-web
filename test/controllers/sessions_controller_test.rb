@@ -13,6 +13,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
           password: "password"
         } }
     }
+    assert_not_empty cookies[:app_session]
     assert_redirected_to root_path
   end
 

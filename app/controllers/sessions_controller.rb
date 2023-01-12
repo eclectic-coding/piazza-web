@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  skip_authentication only: [:new, :create]
 
   def new
   end
@@ -10,7 +11,7 @@ class SessionsController < ApplicationController
     )
 
     if @app_session
-      # TODO: Store in cookie
+      log_in(@app_session)
 
       flash[:success] = t('.success')
       redirect_to root_path, status: :see_other
