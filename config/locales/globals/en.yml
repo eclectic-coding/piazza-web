@@ -1,3 +1,7 @@
 en:
   piazza: Piazza
   login_required: You need to log in to view this page
+  shared:
+    navbar:
+      create_ad: ""
+      sign_up: ""
