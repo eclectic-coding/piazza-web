@@ -1,6 +1,8 @@
 ENV["RAILS_ENV"] ||= "test"
 require_relative "../config/environment"
 require "rails/test_help"
+require "minitest/reporters"
+Minitest::Reporters.use! unless ENV['RM_INFO']
 
 Dir[Rails.root.join("test", "support", "**", "*.rb")].each { |f| require f }
 
