@@ -1,0 +1,6 @@
+en:
+  users:
+    passwords:
+      incorrect_password: Sorry, yourt current password was incorrect
+      update:
+        success: Your password has been changed!
