@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
   skip_authentication only: [:new, :create]
+  before_action :set_user, only: [:show, :edit]
+
+  def show
+  end
 
   def new
     @user = User.new
@@ -19,9 +23,31 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    @user =  Current.user
+
+    if @user.update(update_params)
+      flash[:success] = t(".success")
+      redirect_to profile_path, status: :see_other
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def update_params
+    params.require(:user).permit(:name, :email)
+  end
+
+  def set_user
+    @user = Current.user
   end
 end

@@ -8,3 +8,6 @@ en:
       incorrect_details: The email or password was incorrect. Please try again.
     destroy:
       success: You've logged out successfully!
+  users:
+    update:
+      success: ""

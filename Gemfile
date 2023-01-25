@@ -25,6 +25,8 @@ end
 group :development do
   gem "web-console"
   gem 'i18n-debug'
+  gem "guard"
+  gem "guard-minitest"
 end
 
 group :test do
